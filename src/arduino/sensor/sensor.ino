@@ -1,5 +1,8 @@
 int portMoist = A0;
 int portLight = A1;
+int valueMoist = 0;
+int valueLight = 0;
+char datastring[18] = {0};
 
 void setup() {
   // put your setup code here, to run once:
@@ -8,10 +11,9 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  int valueMoist = analogRead(portMoist);
-  int valueLight = analogRead(portLight);
-  Serial.print(valueMoist);
-  Serial.print(';');
-  Serial.print(valueLight);
-  Serial.print('\n');
+  valueMoist = analogRead(portMoist);
+  valueLight = analogRead(portLight);
+  sprintf(datastring, "%02X;%02X", valueMoist, valueLight);
+  Serial.println(datastring);
+  delay(1000);
 }
