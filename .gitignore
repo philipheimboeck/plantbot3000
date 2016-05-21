@@ -63,3 +63,4 @@ target/
 
 # Twitter Config
 TwitterAPI/config.py
+src/python/config.py
