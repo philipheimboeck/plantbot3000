@@ -22,15 +22,20 @@ def handle(text, mic, profile):
 
     # message = "My moist level is %d percentage and my light level is %d percentage" % (moist, light)
 
-    messages = ["You have a green thumb. I feel good.", "I feel fine.", "Today is a good day",
-                "Thank you for keeping me healthy", "I am growing prosper. Thank you."]
+    messages = ["You have a green thumb. I feel good.", "I feel fine.", "Today is a good day.",
+                "Thank you for keeping me healthy.", "I am growing prosper. Thank you."]
 
-    if moist < 20:
-        messages = ["I am quite thirsty", "Either give me water or kill me right now!",
+    if moist < 40:
+        messages = ["I am quite thirsty.", "Either give me water or kill me right now!",
                     "You must be confusing me with a cactus.", "Please net me right now!"]
-    elif moist < 50:
-        messages = ["I would like some water", "It is not urgent, but could you net me?",
+    elif moist < 60:
+        messages = ["I would like some water.", "It is not urgent, but could you net me?",
                     "Please net me."]
+
+    if(light == 1):
+        messages.append("I like the light in here.")
+    else:
+        messages.append("It is quite dark here.")
 
     message = random.choice(messages)
 

@@ -27,18 +27,17 @@ def handleMoistValues(self, last_date):
 
 def handleLightValues(self, last_value):
     """Handle light values and notifies if they have changed"""
-    light = reader.getLightPercentage()
+    light = reader.getLightValue()
 
     def goodnight():
         return "Good Night."
     def goodmorning():
         return "Good Morning."
 
-    if light < 50 and last_value != "night":
+    if light == 0 and last_value != light:
         self.q.put(goodnight)
-        return "night"
-    if light >= 50 and last_value != "day":
-        self.q.put(goodmorning)
-        return "day"
 
-    return last_value
+    if light == 1 and last_value != light:
+        self.q.put(goodmorning)
+
+    return light

@@ -13,8 +13,8 @@ class SensorReader(object):
 
 	def __init__(self):
 		super(SensorReader, self).__init__()
-		# self.ser = serial.Serial('/dev/ttyACM0',9600)
-		self.ser = serial.Serial('/dev/cu.usbmodem1411', 9600)
+		self.ser = serial.Serial('/dev/ttyACM0',9600)
+		# self.ser = serial.Serial('/dev/cu.usbmodem1411', 9600)
 
 	def read(self):
 		# Write to arduino so it answers with current values
@@ -31,9 +31,6 @@ class SensorReader(object):
 
 	def getMoistValue(self):
 		return self.moist
-
-	def getLightPercentage(self):
-		return float(self.light)/MAX_SENSOR_VALUE_LIGHT * 100
 
 	def getMoistPercentage(self):
 		return 100-float(self.moist)/MAX_SENSOR_VALUE_MOIST * 100

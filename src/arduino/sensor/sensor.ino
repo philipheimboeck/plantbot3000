@@ -1,5 +1,5 @@
 int portMoist = A0;
-int portLight = A1;
+int portLight = 2;
 int valueMoist = 0;
 int valueLight = 0;
 char datastring[18] = {0};
@@ -16,7 +16,7 @@ void loop() {
     received = Serial.readString();
     
     valueMoist = analogRead(portMoist);
-    valueLight = analogRead(portLight);
+    valueLight = digitalRead(portLight);
     sprintf(datastring, "%02X;%02X", valueMoist, valueLight);
     Serial.println(datastring);
   }
