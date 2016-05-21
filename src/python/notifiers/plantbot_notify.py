@@ -34,10 +34,10 @@ def handleLightValues(self, last_value):
     def goodmorning():
         return "Good Morning."
 
-    if light == 0 and last_value != light:
+    if light == 1 and last_value != light:
         self.q.put(goodnight)
 
-    if light == 1 and last_value != light:
+    if light == 0 and last_value != light:
         self.q.put(goodmorning)
 
     return light

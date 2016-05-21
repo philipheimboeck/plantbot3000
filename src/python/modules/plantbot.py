@@ -17,7 +17,7 @@ def isValid(text):
 
 def handle(text, mic, profile):
     reader.read()
-    light = reader.getLightPercentage()
+    light = reader.getLightValue()
     moist = reader.getMoistPercentage()
 
     # message = "My moist level is %d percentage and my light level is %d percentage" % (moist, light)
@@ -32,7 +32,7 @@ def handle(text, mic, profile):
         messages = ["I would like some water.", "It is not urgent, but could you net me?",
                     "Please net me."]
 
-    if(light == 1):
+    if(light == 0):
         messages.append("I like the light in here.")
     else:
         messages.append("It is quite dark here.")
