@@ -4,6 +4,7 @@ import re, sys, os
 # Import required modules
 sys.path.append(os.environ['PLANTBOT_HOME'] + "/src/python/")
 from sensor_reader import SensorReader
+from twitter import *
 
 WORDS = ["HOW", "ARE", "YOU"]
 
@@ -19,4 +20,5 @@ def handle(text, mic, profile):
 
     message = "My moist level is %d percentage and my light level is %d percentage" % (moist, light)
 
+    tweet(message)
     mic.say(message)

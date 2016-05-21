@@ -7,8 +7,7 @@ from sensor_reader import SensorReader
 
 reader = SensorReader()
 
-
-def handleSensorValues(self, last_date):
+def handleMoistValues(self, last_date):
     """Handles Sensor values and notifies if they have changed"""
 
     now = int(round(time.time() * 1000))
@@ -25,3 +24,21 @@ def handleSensorValues(self, last_date):
             self.q.put(thirsty)
 
     return last_date
+
+def handleLightValues(self, last_value):
+    """Handle light values and notifies if they have changed"""
+    light = reader.getLightPercentage()
+
+    def goodnight():
+        return "Good Night."
+    def goodmorning():
+        return "Good Morning."
+
+    if light < 50 and last_value != "night":
+        self.q.put(goodnight)
+        return "night"
+    if light >= 50 and last_value != "day":
+        self.q.put(goodmorning)
+        return "day"
+
+    return last_value
