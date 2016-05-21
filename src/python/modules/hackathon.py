@@ -13,5 +13,6 @@ def isValid(text):
 def handle(text, mic, profile):
 
     message = "You know what " + profile["first_name"] + "? I REALLY LOVE NERDS AND GEEKS!"
+    tweet(message)
 
     mic.say(message)
