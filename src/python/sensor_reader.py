@@ -13,10 +13,14 @@ class SensorReader(object):
 
 	def __init__(self):
 		super(SensorReader, self).__init__()
-		self.ser = serial.Serial('/dev/ttyACM0',9600)
-		# self.ser = serial.Serial('/dev/cu.usbmodem1411', 9600)
+		# self.ser = serial.Serial('/dev/ttyACM0',9600)
+		self.ser = serial.Serial('/dev/cu.usbmodem1411', 9600)
 
 	def read(self):
+		# Write to arduino so it answers with current values
+		self.ser.write("get".encode())
+
+		# Get the data
 		line = self.ser.readline().strip()
 		numbers = line.split(';')
 		self.moist = int (numbers[0], 16)
