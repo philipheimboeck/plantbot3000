@@ -18,6 +18,7 @@ echo $plantbot_home
 ln -s $plantbot_home/src/python/modules/plantbot.py $jasper_home/client/modules/plantbot.py
 ln -s $plantbot_home/src/python/modules/hello.py $jasper_home/client/modules/hello.py
 ln -s $plantbot_home/src/python/modules/hackathon.py $jasper_home/client/modules/hackathon.py
+ln -s $plantbot_home/src/python/modules/beer.py $jasper_home/client/modules/beer.py
 
 ln -s $plantbot_home/src/python/notifiers/plantbot_notify.py $jasper_home/client/plantbot_notify.py
 
