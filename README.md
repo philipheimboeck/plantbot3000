@@ -1,2 +1,11 @@
 # plantbot3000
 Raspberry Pi Project to monitor plants
+
+## Setup
+
+* Install jasper on your Raspberry Pi
+* Upload `src/sensor/sensor.ino` to the Arduino
+* Connect the Arduino with the Pi with USB
+* Ensure that  `/dev/ttyACM0` is the correct device on your Pi (or change it in `src/python/sensor_reader.py`)
+* Run `src/install.sh`
+* Set the environment variable `export PLANTBOT_HOME=PATH/TO/PLANTBOT3000`
