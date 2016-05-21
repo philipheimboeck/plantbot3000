@@ -17,7 +17,7 @@ echo $plantbot_home
 
 ln -s $plantbot_home/src/python/modules/plantbot.py $jasper_home/client/modules/plantbot.py
 
-ln -s $plantbot_home/src/python/client/plantbot_notify.py $jasper_home/client/notifiers/plantbot_notify.py
+ln -s $plantbot_home/src/python/notifiers/plantbot_notify.py $jasper_home/client/plantbot_notify.py
 
 echo ""
 echo "Add the following lines to ~/.bashrc or ~/.bash_profile"
