@@ -2,8 +2,8 @@
 
 import serial
 
-MAX_SENSOR_VALUE_MOIST = 1024
-MAX_SENSOR_VALUE_LIGHT = 1024
+MAX_SENSOR_VALUE_MOIST = 1023
+MAX_SENSOR_VALUE_LIGHT = 1023
 
 class SensorReader(object):
 	"""docstring for SensorReader"""
@@ -29,7 +29,7 @@ class SensorReader(object):
 		return self.moist
 
 	def getLightPercentage(self):
-		return self.light/MAX_SENSOR_VALUE_LIGHT * 100
+		return float(self.light)/MAX_SENSOR_VALUE_LIGHT * 100
 
 	def getMoistPercentage(self):
-		return self.moist/MAX_SENSOR_VALUE_MOIST * 100
+		return 100-float(self.moist)/MAX_SENSOR_VALUE_MOIST * 100
