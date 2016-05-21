@@ -12,7 +12,7 @@ def isValid(text):
 
 def handle(text, mic, profile):
 
-    message = "Hello Julian, it is nice to be here in Dornbirn today"
+    message = "Hello " + profile["first_name"] + ", it is nice to be in " + profile["location"] +" today."
     tweet(message)
 
     mic.say(message)
